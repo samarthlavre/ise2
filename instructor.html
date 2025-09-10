@@ -1,0 +1,17 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><meta charset="utf-8"><title th:text="${instructor.name}">Instructor</title></head>
+<body>
+  <h1 th:text="${instructor.name}">Instructor</h1>
+  <p th:text="${instructor.bio}">Bio</p>
+  <p>Email: <span th:text="${instructor.email}"></span></p>
+
+  <h3>Courses by this instructor</h3>
+  <ul>
+    <li th:each="c : ${courses}">
+      <a th:href="@{|/courses/${c.id}|}" th:text="${c.title}"></a>
+    </li>
+  </ul>
+  <p><a th:href="@{/courses}">Back to courses</a></p>
+</body>
+</html>
