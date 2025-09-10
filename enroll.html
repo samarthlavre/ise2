@@ -1,0 +1,14 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><meta charset="utf-8"><title>Enroll</title></head>
+<body>
+  <h1>Enroll in <span th:text="${course.title}"></span></h1>
+  <form th:action="@{/enroll}" method="post">
+    <input type="hidden" name="courseId" th:value="${course.id}" />
+    <label>Name: <input type="text" name="name" required /></label><br/>
+    <label>Email: <input type="email" name="email" required/></label><br/>
+    <button type="submit">Submit Enrollment</button>
+  </form>
+  <p><a th:href="@{|/courses/${course.id}|}">Back to course</a></p>
+</body>
+</html>
