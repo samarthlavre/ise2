@@ -1,0 +1,10 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><meta charset="utf-8"><title>Enrollment Successful</title></head>
+<body>
+  <h1>Thank you, <span th:text="${name}">Student</span>!</h1>
+  <p>You are enrolled in: <strong th:text="${course.title}">Course</strong></p>
+  <p>We will contact you at <span th:text="${email}"></span>.</p>
+  <p><a th:href="@{/courses}">Back to catalog</a></p>
+</body>
+</html>
